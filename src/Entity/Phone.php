@@ -7,8 +7,9 @@ use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\ManyToOne;
+use WillAvelar\Doctrine\Repository\DoctrinePhoneRepository;
 
-#[Entity]
+#[Entity(repositoryClass: DoctrinePhoneRepository::class)]
 class Phone
 {
     #[Id, GeneratedValue, Column]

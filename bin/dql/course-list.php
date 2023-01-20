@@ -5,13 +5,12 @@ use WillAvelar\Doctrine\Entity\Phone;
 use WillAvelar\Doctrine\Entity\Student;
 use WillAvelar\Doctrine\Helper\EntityManagerCreator;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 $entityManager = EntityManagerCreator::createEntityManager();
-$courseRepository = $entityManager->getRepository(Course::class);
 
-/** @var Course[] $studentList */
-$courseList = $courseRepository->findAll();
+$dql = 'SELECT course FROM WillAvelar\Doctrine\Entity\Course course';
+$courseList = $entityManager->createQuery($dql)->getResult();
 
 foreach ($courseList as $course) {
     echo "ID: $course->id\nName: $course->name";

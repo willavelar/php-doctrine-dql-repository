@@ -2,17 +2,13 @@
 
 use WillAvelar\Doctrine\Entity\Student;
 use WillAvelar\Doctrine\Helper\EntityManagerCreator;
+use WillAvelar\Doctrine\Repository\DoctrineStudentRepository;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 $entityManager = EntityManagerCreator::createEntityManager();
+
+/** @var DoctrineStudentRepository $studentRepository */
 $studentRepository = $entityManager->getRepository(Student::class);
 
-/** @var Student $studentList */
-$student = $studentRepository->findOneBy([
-    'name' => $argv[1]
-]);
-
-if ($student) {
-    echo "ID : $student->id\nNome: $student->name\n\n";
-}
+$studentRepository->rename($argv[1], $argv[2]);

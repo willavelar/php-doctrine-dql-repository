@@ -9,8 +9,9 @@ use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\ManyToMany;
+use WillAvelar\Doctrine\Repository\DoctrineCourseRepository;
 
-#[Entity]
+#[Entity(repositoryClass: DoctrineCourseRepository::class)]
 class Course
 {
 
