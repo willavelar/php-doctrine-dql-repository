@@ -7,6 +7,12 @@ use WillAvelar\Doctrine\Entity\Course;
 
 class DoctrineCourseRepository extends EntityRepository
 {
+    public function delete(string $id) : void
+    {
+        $student = $this->getEntityManager()->find(Course::class, $id);
+        $this->getEntityManager()->remove($student);
+        $this->getEntityManager()->flush();
+    }
     public function add(string $name) : void
     {
         $course = new Course($name);

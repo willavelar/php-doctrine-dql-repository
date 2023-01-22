@@ -4,7 +4,7 @@ use WillAvelar\Doctrine\Entity\Student;
 use WillAvelar\Doctrine\Helper\EntityManagerCreator;
 use WillAvelar\Doctrine\Repository\DoctrineStudentRepository;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 $entityManager = EntityManagerCreator::createEntityManager();
 
