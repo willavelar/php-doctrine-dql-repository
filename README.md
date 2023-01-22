@@ -1,4 +1,4 @@
-## PHP Doctrine DQL and Repository Terminal
+## PHP Doctrine DQL and Repository
 
 ![PHP Version Support](https://img.shields.io/badge/php-8.1%2B-brightgreen.svg?style=flat-square) ![Composer Version Support](https://img.shields.io/badge/composer-2.2.9%2B-brightgreen.svg?style=flat-square)
 
